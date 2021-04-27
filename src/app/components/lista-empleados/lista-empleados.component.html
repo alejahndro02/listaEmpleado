@@ -2,15 +2,15 @@
     <div class="card">
         <div class="card-body">
             <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="genero" id="todos" value="Todos">
+                <input class="form-check-input" [(ngModel)]="radioButtonSelect" type="radio" name="genero" id="todos" value="Todos">
                 <label class="form-check-label" for="todos">Todos ({{totalEmpleados()}})</label>
             </div>
             <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="genero" id="masculino" value="Masculino">
+                <input class="form-check-input" [(ngModel)]="radioButtonSelect" type="radio" name="genero" id="masculino" value="Masculino">
                 <label class="form-check-label" for="masculino">Masculino ({{totalMasculino()}})</label>
             </div>
             <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="genero" id="femenino" value="Femenino">
+                <input class="form-check-input" [(ngModel)]="radioButtonSelect" type="radio" name="genero" id="femenino" value="Femenino">
                 <label class="form-check-label" for="femenino">Femenino ({{totalFemenino()}})</label>
             </div>
         </div>
@@ -28,13 +28,15 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let empleado of listaEmpleados">
-                        <td>{{empleado.folio}}</td>
-                        <td>{{empleado.nombre}}</td>
-                        <td>{{empleado.apellido}}</td>
-                        <td>{{empleado.genero}}</td>
-                        <td>{{empleado.salario | currency}}</td>
-                    </tr>
+                    <ng-container *ngFor="let empleado of listaEmpleados">
+                        <tr *ngIf="radioButtonSelect == 'Todos' || radioButtonSelect == empleado.genero">
+                            <td>{{empleado.folio}}</td>
+                            <td>{{empleado.nombre}}</td>
+                            <td>{{empleado.apellido}}</td>
+                            <td>{{empleado.genero}}</td>
+                            <td>{{empleado.salario | currency}}</td>
+                        </tr>
+                    </ng-container>
             </table>
         </div>
     </div>
