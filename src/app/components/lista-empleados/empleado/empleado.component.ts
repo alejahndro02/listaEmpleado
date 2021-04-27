@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-empleado',
@@ -10,6 +10,9 @@ export class EmpleadoComponent implements OnInit {
   @Input() todos: number;
   @Input() masculino: number;
   @Input() femenino: number;
+
+  //Con Qoutput se pasaran los datos del componente hiijo al padre
+  @Output() radioButtonChange = new EventEmitter<string>();
   radioButtonSelect = "Todos";
   constructor() { 
     this.todos = 0;
@@ -21,4 +24,7 @@ export class EmpleadoComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  radioChange():void{
+    this.radioButtonChange.emit(this.radioButtonSelect);
+  }
 }
