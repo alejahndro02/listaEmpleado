@@ -17,6 +17,7 @@ export class ListaEmpleadosComponent implements OnInit {
     {folio: 6, nombre : 'Kushina', apellido: 'Yamamoto', genero: 'Femenino', salario : 10000}
 
   ] 
+  radioButtonSelect = "Todos";
 
   constructor() { }
 
