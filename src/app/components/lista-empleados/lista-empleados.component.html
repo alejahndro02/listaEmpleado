@@ -16,6 +16,26 @@
         </div>
     </div>
     <div class="card mt-3">
-        <div class="card-body">tabla </div>
+        <div class="card-body">
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Folio</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Genero</th>
+                        <th>Salario</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let empleado of listaEmpleados">
+                        <td>{{empleado.folio}}</td>
+                        <td>{{empleado.nombre}}</td>
+                        <td>{{empleado.apellido}}</td>
+                        <td>{{empleado.genero}}</td>
+                        <td>{{empleado.salario | currency}}</td>
+                    </tr>
+            </table>
+        </div>
     </div>
 </div>
