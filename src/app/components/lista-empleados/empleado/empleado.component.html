@@ -1,1 +1,16 @@
-<p>empleado works!</p>
+<div class="card">
+    <div class="card-body">
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" [(ngModel)]="radioButtonSelect" type="radio" name="genero" id="todos" value="Todos">
+            <label class="form-check-label" for="todos">Todos ({{todos}})</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" [(ngModel)]="radioButtonSelect" type="radio" name="genero" id="masculino" value="Masculino">
+            <label class="form-check-label" for="masculino">Masculino ({{masculino}})</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" [(ngModel)]="radioButtonSelect" type="radio" name="genero" id="femenino" value="Femenino">
+            <label class="form-check-label" for="femenino">Femenino ({{femenino}})</label>
+        </div>
+    </div>
+</div>
